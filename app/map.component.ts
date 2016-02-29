@@ -16,9 +16,9 @@ export class MapComponent {
   ngOnInit() {
     // create the map
     this.map = new Map(this.elRef.nativeElement.firstChild, {
-      basemap: 'topo',
-      zoom: 10,
-      center: [-120.76, 37.93]
+      basemap: "gray",
+      center: [-97, 38], // lon, lat
+      zoom: 5
     });
     
     // emit map loaded event once loaded

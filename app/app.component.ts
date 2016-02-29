@@ -1,19 +1,16 @@
 import { Component } from 'angular2/core';
 import { MapComponent } from './map.component';
+import { SearchComponent } from './search.component';
 
 @Component({
-  directives: [MapComponent],
+  directives: [MapComponent, SearchComponent],
     selector: 'my-app',
     template:
     `
-    <div>
-    <esri-map #mapDirective (mapLoaded)="onMapLoad(mapDirective.map)">
+    <esri-map #mapComponent (mapLoaded)="searchComponent.setMap(mapComponent.map)">
+      <esri-search #searchComponent></esri-search>
     </esri-map>
-    </div>
     `
 })
 export class AppComponent { 
-  onMapLoad(map) {
-    console.log('map loaded:', map);
-  }
 }
