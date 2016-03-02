@@ -7,10 +7,22 @@ import { SearchComponent } from './search.component';
     selector: 'my-app',
     template:
     `
-    <esri-map #mapComponent (mapLoaded)="searchComponent.setMap(mapComponent.map)">
-      <esri-search #searchComponent></esri-search>
+    <esri-map #mapComponent [options]="mapOptions" (mapLoaded)="searchComponent.setMap(mapComponent.map)">
+      <esri-search [options]="searchOptions" #searchComponent></esri-search>
     </esri-map>
     `
 })
 export class AppComponent { 
+  public mapOptions = {
+    basemap: "gray",
+    center: [-97, 38], // lon, lat
+    zoom: 5
+  };
+  
+  public searchOptions = {
+    enableButtonMode: true, //this enables the search widget to display as a single button
+    enableLabel: false,
+    enableInfoWindow: true,
+    showInfoWindowOnSelect: false,
+  };
 }

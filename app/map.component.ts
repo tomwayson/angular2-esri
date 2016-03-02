@@ -1,9 +1,11 @@
 import { Component, ElementRef, Output, EventEmitter } from 'angular2/core';
-import { Map } from 'esri';
+import { MapService } from './map.service';
 
 @Component({
-    selector: 'esri-map',
-    template: '<div><ng-content></ng-content></div>'
+  selector: 'esri-map',
+  template: '<div><ng-content></ng-content></div>',
+  providers: [MapService],
+  inputs: ['options']
 })
 export class MapComponent {
 
@@ -11,15 +13,13 @@ export class MapComponent {
   
   map: any;
   
-  constructor(private elRef:ElementRef) {}
+  options: Object;
+  
+  constructor(private elRef:ElementRef, private _mapService:MapService) {}
   
   ngOnInit() {
     // create the map
-    this.map = new Map(this.elRef.nativeElement.firstChild, {
-      basemap: "gray",
-      center: [-97, 38], // lon, lat
-      zoom: 5
-    });
+    this.map = this._mapService.createMap(this.elRef.nativeElement.firstChild, this.options);
     
     // emit map loaded event once loaded
     this.map.on('load', () => {
