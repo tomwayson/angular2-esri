@@ -1,21 +1,23 @@
 import { Component, ElementRef, Output, EventEmitter } from 'angular2/core';
-import { Search } from 'esri';
+import { MapService } from './map.service';
+
 
 @Component({
   selector: 'esri-search',
-  template: '<div></div>'
+  template: '<div></div>',
+  providers: [MapService],
+  inputs: ['options']
 })
 export class SearchComponent {
 
-  constructor(private elRef:ElementRef) {}
+  constructor(private elRef:ElementRef, private _mapService:MapService) {}
 
+  search: any;
+
+  options: Object;
+  
   ngOnInit() {
-    this.search = new Search({
-      enableButtonMode: true, //this enables the search widget to display as a single button
-      enableLabel: false,
-      enableInfoWindow: true,
-      showInfoWindowOnSelect: false,
-    }, this.elRef.nativeElement.firstChild);      
+    this.search = this._mapService.createSearch(this.options, this.elRef.nativeElement.firstChild);      
   }
 
   setMap(map) {
