@@ -23,7 +23,9 @@
 
   <!-- 3. Display the application -->
   <body>
-    <my-app>Loading...</my-app>
+    <div class="container-fluid">
+      <my-app>Loading...</my-app>
+    </div>
     <script>
     // configure system.js
     System.config({
@@ -36,7 +38,7 @@
     // load esri modules needed by this application
     // into a System.js module called esri
     esriSystem.register([
-      'esri/map',
+      'esri/arcgis/utils',
       'esri/dijit/Search',
       'esri/dijit/Legend',
       'esri/InfoTemplate'
@@ -46,7 +48,7 @@
         .then(null, console.error.bind(console));
     }, {
       moduleNameOverrides: {
-        'esri/map': 'Map'
+        'esri/arcgis/utils': 'arcgisUtils'
       }
     });
   </script>

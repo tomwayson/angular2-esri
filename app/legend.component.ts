@@ -11,9 +11,9 @@ export class LegendComponent {
   constructor(private elRef:ElementRef, private _mapService:MapService) {}
 
   legend: any;
-  
-  setMap(map) {
-    this.legend = this._mapService.createLegend({map}, this.elRef.nativeElement.firstChild);
-    this.legend.startup();    
+
+  init(map, layerInfos) {
+    this.legend = this._mapService.createLegend({map, layerInfos}, this.elRef.nativeElement.firstChild);
+    this.legend.startup();
   }
 }

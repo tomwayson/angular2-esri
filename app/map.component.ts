@@ -5,25 +5,25 @@ import { MapService } from './map.service';
   selector: 'esri-map',
   template: '<div><ng-content></ng-content></div>',
   providers: [MapService],
-  inputs: ['options']
+  inputs: ['options', 'itemId']
 })
 export class MapComponent {
 
   @Output() mapLoaded = new EventEmitter();
-  
-  map: any;
-  
+
+  response: any;
   options: Object;
-  
+  itemId: string;
+
   constructor(private elRef:ElementRef, private _mapService:MapService) {}
-  
+
   ngOnInit() {
     // create the map
-    this.map = this._mapService.createMap(this.elRef.nativeElement.firstChild, this.options);
-    
-    // emit map loaded event once loaded
-    this.map.on('load', () => {
-      this.mapLoaded.next(this.map);      
+    this._mapService.createMap(this.itemId, this.elRef.nativeElement.firstChild, this.options).then((response) => {
+      // make response available to app
+      // and emit map loaded event
+      this.response = response;
+      this.mapLoaded.next(response);
     });
   }
 }
