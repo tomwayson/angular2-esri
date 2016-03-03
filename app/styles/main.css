@@ -7,6 +7,10 @@ esri-map .map {
   padding: 0;
 }
 
+.map-col {
+  padding: 0;
+}
+
 esri-map esri-search .arcgisSearch {
   display: block;
   position: absolute;

@@ -1,5 +1,5 @@
 import { Injectable } from 'angular2/core';
-import { Map, Search } from 'esri';
+import { Map, Search, Legend } from 'esri';
 
 @Injectable()
 export class MapService {
@@ -10,4 +10,8 @@ export class MapService {
   createSearch(options: Object, domNodeOrId: any) {
     return new Search(options, domNodeOrId);
   };
+
+  createLegend(options: Object, domNodeOrId: any) {
+    return new Legend(options, domNodeOrId);
+  }
 }
