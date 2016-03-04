@@ -15,6 +15,6 @@ esri-map esri-search .arcgisSearch {
   display: block;
   position: absolute;
   z-index: 2;
-  top: 20px;
-  left: 74px;
+  top: 15px;
+  left: 65px;
 }
