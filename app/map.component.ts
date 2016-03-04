@@ -11,7 +11,7 @@ export class MapComponent {
 
   @Output() mapLoaded = new EventEmitter();
 
-  response: any;
+  map: any;
   options: Object;
   itemId: string;
 
@@ -20,18 +20,21 @@ export class MapComponent {
   ngOnInit() {
     // create the map
     this._mapService.createMap(this.itemId, this.elRef.nativeElement.firstChild, this.options).then((response) => {
-      // make response available to app
-      // and emit map loaded event
-      this.response = response;
+      // get a reference to teh map and expose response to app
+      this.map = response.map;
       this.mapLoaded.next(response);
     });
   }
 
+  setBasemap(basemapName) {
+    this._mapService.clearBasemap(this.map);
+    this.map.setBasemap(basemapName);
+  }
+
   // destroy map
   ngOnDestroy() {
-    if (this.response && this.response.map) {
-      this.response.map.destroy();
-      this.response = null;
+    if (this.map) {
+      this.map.destroy();
     }
   }
 }
