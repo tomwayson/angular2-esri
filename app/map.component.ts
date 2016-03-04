@@ -26,4 +26,12 @@ export class MapComponent {
       this.mapLoaded.next(response);
     });
   }
+
+  // destroy map
+  ngOnDestroy() {
+    if (this.response && this.response.map) {
+      this.response.map.destroy();
+      this.response = null;
+    }
+  }
 }

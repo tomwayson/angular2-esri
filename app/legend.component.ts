@@ -16,4 +16,11 @@ export class LegendComponent {
     this.legend = this._mapService.createLegend({map, layerInfos}, this.elRef.nativeElement.firstChild);
     this.legend.startup();
   }
+
+  // destroy legend dijit
+  ngOnDestroy() {
+    if (this.legend) {
+      this.legend.destroy();
+    }
+  }
 }
