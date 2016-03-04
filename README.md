@@ -3,6 +3,10 @@ This is an example app using [ArcGIS API for JavaScript] **v3** in an [Angular 2
 The purpose is to explore ways that [Angular 2] components and services can communicate
 with a map, legend, search, etc.
 
+![screenshot](https://raw.github.com/tomwayson/angular2-esri-example/master/sreenshot.png)
+
+[Try it out!](http://tomwayson.github.io/angular2-esri-example/)
+
 ## Quick Start
 After downloading, run the following at the command line to run the app:
 ```bash
