@@ -63,6 +63,8 @@ export class AppComponent {
     this.basemapSelect.selectedBasemap = response.basemapName;
     // bind the map title
     this.title = response.itemInfo.item.title;
+    //bind the legendlayer
+    this.LayerComponent.init(response);
   }
 
   // set map's basemap in response to user changes
