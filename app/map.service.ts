@@ -73,4 +73,11 @@ export class MapService {
       map.removeLayer(map.getLayer(map.layerIds[0]));
     }
   }
+  //change the selected layer visibility
+  selectLayer(response, selectedLayer){ 
+    response.layerInfos.forEach(layerId =>{
+      if (selectedLayer.name===layerId.title)
+      layerId.layer.setVisibility(!selectedLayer.checked);
+    });
+  }
 }
