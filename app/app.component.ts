@@ -3,9 +3,9 @@ import { MapComponent } from './map.component';
 import { SearchComponent } from './search.component';
 import { LegendComponent } from './legend.component';
 import { BasemapSelect } from './basemapselect.component';
-
+import { LayerComponent } from './layer.component';
 @Component({
-  directives: [MapComponent, SearchComponent, LegendComponent, BasemapSelect],
+  directives: [MapComponent, SearchComponent, LegendComponent, BasemapSelect, LayerComponent],
     selector: 'my-app',
     template:
     `
@@ -23,6 +23,10 @@ import { BasemapSelect } from './basemapselect.component';
           <basemap-select (basemapSelected)="onBasemapSelected($event)"></basemap-select>
         </div>
       </div>
+      <div>
+        <h3>LayerVisibility</h3>
+        <esri-layer></esri-layer>
+      </div>
     </div>
     `
 })
@@ -33,15 +37,19 @@ export class AppComponent {
   @ViewChild(SearchComponent) searchComponent:SearchComponent;
   @ViewChild(LegendComponent) legendComponent:LegendComponent;
   @ViewChild(BasemapSelect) basemapSelect:BasemapSelect;
+  
+  @ViewChild(LayerComponent) LayerComponent:LayerComponent;
 
   title = 'Map Title';
 
   // map config
   itemId = '8e42e164d4174da09f61fe0d3f206641';
+  
+  
   public mapOptions = {
-    basemap: "gray",
-    center: [-97, 38], // lon, lat
-    zoom: 5
+    basemap: "imagery",//"gray",
+    center: [-107, 38], // lon, lat
+    zoom: 10
   };
 
   // search config
@@ -55,6 +63,7 @@ export class AppComponent {
   // once the map loads
   onMapLoad(response) {
     const map = response.map;
+
     // bind the search dijit to the map
     this.searchComponent.setMap(map);
     // initialize the leged dijit with map and layer infos
@@ -62,7 +71,7 @@ export class AppComponent {
     // set the selected basemap
     this.basemapSelect.selectedBasemap = response.basemapName;
     // bind the map title
-    this.title = response.itemInfo.item.title;
+    this.title = response.itemInfo.item.title; 
     //bind the legendlayer
     this.LayerComponent.init(response);
   }
@@ -72,3 +81,4 @@ export class AppComponent {
     this.mapComponent.setBasemap(basemapName);
   }
 }
+
