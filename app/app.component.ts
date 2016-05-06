@@ -37,7 +37,6 @@ export class AppComponent {
   @ViewChild(SearchComponent) searchComponent:SearchComponent;
   @ViewChild(LegendComponent) legendComponent:LegendComponent;
   @ViewChild(BasemapSelect) basemapSelect:BasemapSelect;
-  
   @ViewChild(LayerComponent) LayerComponent:LayerComponent;
 
   title = 'Map Title';
@@ -47,9 +46,9 @@ export class AppComponent {
   
   
   public mapOptions = {
-    basemap: "imagery",//"gray",
-    center: [-107, 38], // lon, lat
-    zoom: 10
+    basemap: gray",
+    center: [-97, 38], // lon, lat
+    zoom: 5
   };
 
   // search config
