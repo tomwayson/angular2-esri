@@ -43,10 +43,10 @@ export class AppComponent {
 
   // map config
   itemId = '8e42e164d4174da09f61fe0d3f206641';
-  
-  
+
+
   public mapOptions = {
-    basemap: gray",
+    basemap: 'gray',
     center: [-97, 38], // lon, lat
     zoom: 5
   };
@@ -70,7 +70,7 @@ export class AppComponent {
     // set the selected basemap
     this.basemapSelect.selectedBasemap = response.basemapName;
     // bind the map title
-    this.title = response.itemInfo.item.title; 
+    this.title = response.itemInfo.item.title;
     //bind the legendlayer
     this.LayerComponent.init(response);
   }
@@ -80,4 +80,3 @@ export class AppComponent {
     this.mapComponent.setBasemap(basemapName);
   }
 }
-
