@@ -17,15 +17,14 @@ import { LayerComponent } from './layer.component';
       </div>
       <div class="col-sm-4 col-md-3 col-lg-2">
         <h3>{{title}}</h3>
-        <esri-legend></esri-legend>
+        <h4>Layer Visibility</h4>
+        <esri-layer></esri-layer>
+        <h4>Legend</h4>
+        <esri-legend class="legend-container"></esri-legend>
         <h4>Basemap</h4>
         <div>
           <basemap-select (basemapSelected)="onBasemapSelected($event)"></basemap-select>
         </div>
-      </div>
-      <div>
-        <h3>LayerVisibility</h3>
-        <esri-layer></esri-layer>
       </div>
     </div>
     `
@@ -43,8 +42,6 @@ export class AppComponent {
 
   // map config
   itemId = '8e42e164d4174da09f61fe0d3f206641';
-
-
   public mapOptions = {
     basemap: 'gray',
     center: [-97, 38], // lon, lat

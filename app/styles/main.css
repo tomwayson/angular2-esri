@@ -18,3 +18,9 @@ esri-map esri-search .arcgisSearch {
   top: 15px;
   left: 65px;
 }
+
+.legend-container {
+  display: block;
+  max-height: 360px;
+  overflow-y: auto;
+}
