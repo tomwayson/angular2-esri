@@ -1,4 +1,4 @@
-import { Component, ViewChild } from 'angular2/core';
+import { Component, ViewChild } from '@angular/core';
 import { MapComponent } from './map.component';
 import { SearchComponent } from './search.component';
 import { LegendComponent } from './legend.component';
