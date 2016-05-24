@@ -1,8 +1,4 @@
-/**
- * System configuration for Angular 2 samples
- * Adjust as necessary for your application needs.
- * Override at the last minute with global.filterSystemConfig (as plunkers do)
- */
+
 (function(global) {
 
   // map tells the System loader where to look for things
