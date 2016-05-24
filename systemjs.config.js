@@ -1,7 +1,7 @@
 
 (function(global) {
 
-  // map tells the System loader where to look for things
+  // map tells the System loader where to look for things.
   var map = {
     'app':                        'app', // 'dist',
     'rxjs':                       'node_modules/rxjs',
