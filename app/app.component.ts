@@ -46,7 +46,7 @@ export class AppComponent {
   
   
   public mapOptions = {
-    basemap: gray",
+    basemap: 'gray',
     center: [-97, 38], // lon, lat
     zoom: 5
   };
