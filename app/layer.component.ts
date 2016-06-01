@@ -1,6 +1,6 @@
-import { Component} from 'angular2/core';
+import { Component} from '@angular/core';
 import { MapService } from './map.service';
-import {NgFor,NgModel,NgControl} from 'angular2/common';
+import {NgFor,NgModel,NgControl} from '@angular/common';
 
 @Component({
   selector: 'esri-layer',
@@ -8,7 +8,7 @@ import {NgFor,NgModel,NgControl} from 'angular2/common';
   template: `
              <form>
               <div class = "form-group">
-                    <template ngFor #legendLayer [ngForOf]="legendLayers">
+                    <template ngFor let-legendLayer [ngForOf]="legendLayers">
                       <div>
                           <input
                             type = "checkbox"

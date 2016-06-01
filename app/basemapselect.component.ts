@@ -1,11 +1,13 @@
-import { Component, ElementRef, Output, EventEmitter } from 'angular2/core';
+import { Component, ElementRef, Output, EventEmitter } from '@angular/core';
 import { MapService } from './map.service';
 
 @Component({
   selector: 'basemap-select',
   template:
   `<select [ngModel]="selectedBasemap" (change)="onSelectChange($event)" class="form-control">
-    <option *ngFor="#basemap of basemaps" value="{{basemap.name}}">{{basemap.title}}</option>
+  <template ngFor let-basemap [ngForOf]="basemaps">
+    <option value="{{basemap.name}}">{{basemap.title}}</option>
+  </template>
   </select>`,
   providers: [MapService]
 })
