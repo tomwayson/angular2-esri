@@ -1,4 +1,4 @@
-import { Injectable } from 'angular2/core';
+import { Injectable } from '@angular/core';
 import { arcgisUtils, esriBasemaps, Legend, Search } from 'esri';
 
 @Injectable()

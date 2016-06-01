@@ -1,17 +1,22 @@
 <html>
   <head>
-    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous"> 
     <link rel="stylesheet" href="//js.arcgis.com/3.16/esri/themes/calcite/dijit/calcite.css">
     <link rel="stylesheet" href="//js.arcgis.com/3.16/esri/themes/calcite/esri/esri.css">
-    <link rel="stylesheet" href="app/styles/main.css">
+
+    
     <title>ArcGIS JS API 3 & Angular 2</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="styles.css">
 
     <!-- 1. Load Angular libraries -->
-    <script src="node_modules/angular2/bundles/angular2-polyfills.js"></script>
+    <script src="node_modules/es6-shim/es6-shim.min.js"></script>
+    <script src="node_modules/zone.js/dist/zone.js"></script>
+    <script src="node_modules/reflect-metadata/Reflect.js"></script>
     <script src="node_modules/systemjs/dist/system.src.js"></script>
-    <script src="node_modules/rxjs/bundles/Rx.js"></script>
-    <script src="node_modules/angular2/bundles/angular2.dev.js"></script>
-
+    <script src="systemjs.config.js"></script>
+    
     <!-- 2. Configure and load Esri libraries -->
     <script>
       window.dojoConfig = {
@@ -21,39 +26,31 @@
     <script src="https://js.arcgis.com/3.16/"></script>
     <script src="node_modules/esri-system-js/dist/esriSystem.js"></script>
   </head>
-
+  
   <!-- 3. Display the application -->
   <body class="calcite">
-    <div class="container-fluid">
-      <my-app>Loading...</my-app>
-    </div>
+      <div class="container-fluid">
+        <my-app>Loading...</my-app>
+      </div>
     <script>
-    // configure system.js
-    System.config({
-      packages: {
-        app: {
-          defaultExtension: 'js'
-        }
-      }
-    });
-    // load esri modules needed by this application
-    // into a System.js module called esri
-    esriSystem.register([
-      'esri/arcgis/utils',
-      'esri/basemaps',
-      'esri/dijit/Legend',
-      'esri/dijit/Search'
-    ], function () {
-      // then bootstrap application
-      System.import('app/boot')
-        .then(null, console.error.bind(console));
-    }, {
-      moduleNameOverrides: {
-        'esri/arcgis/utils': 'arcgisUtils',
-        'esri/basemaps': 'esriBasemaps'
-      }
-    });
-  </script>
+      // load esri modules needed by this application
+      // into a System.js module called esri
+        esriSystem.register([
+          'esri/arcgis/utils',
+          'esri/basemaps',
+          'esri/dijit/Legend',
+          'esri/dijit/Search'
+        ], function () {
+          // then bootstrap application
+          System.import('app')
+            .then(null, console.error.bind(console));
+        }, {
+          moduleNameOverrides: {
+            'esri/arcgis/utils': 'arcgisUtils',
+            'esri/basemaps': 'esriBasemaps'
+          }
+        });
+    </script>
   </body>
-
+  
 </html>
