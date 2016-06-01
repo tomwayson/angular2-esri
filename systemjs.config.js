@@ -4,39 +4,35 @@
   // map tells the System loader where to look for things.
   var map = {
     'app':                        'app', // 'dist',
-    'rxjs':                       'node_modules/rxjs',
-    '@angular':                   'node_modules/@angular'
+    '@angular':                   'node_modules/@angular',
+    'rxjs':                       'node_modules/rxjs'
   };
 
   // packages tells the System loader how to load when no filename and/or no extension
   var packages = {
     'app':                        { main: 'boot.js',  defaultExtension: 'js' },
     'rxjs':                       { defaultExtension: 'js' },
-    'esri'                      : {defaultExtension: 'js'}
+    'esri':                       { defaultExtension: 'js' }
   };
-
-  var packageNames = [
-    '@angular/common',
-    '@angular/compiler',
-    '@angular/core',
-    '@angular/http',
-    '@angular/platform-browser',
-    '@angular/platform-browser-dynamic',
-    '@angular/router-deprecated',
-    '@angular/testing',
-    '@angular/upgrade',
+  var ngPackageNames = [
+    'common',
+    'compiler',
+    'core',
+    'http',
+    'platform-browser',
+    'platform-browser-dynamic',
+    'router',
+    'router-deprecated',
+    'upgrade',
   ];
-
-  // add package entries for angular packages in the form '@angular/common': { main: 'index.js', defaultExtension: 'js' }
-  packageNames.forEach(function(pkgName) {
-    packages[pkgName] = { main: 'index.js', defaultExtension: 'js' };
+  // Add package entries for angular packages
+  ngPackageNames.forEach(function(pkgName) {
+    packages['@angular/'+pkgName] = { main: pkgName + '.umd.js', defaultExtension: 'js' };
   });
-
   var config = {
     map: map,
     packages: packages
   }
-
   System.config(config);
 
 })(this);
