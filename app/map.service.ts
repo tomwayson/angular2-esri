@@ -1,11 +1,16 @@
 import { Injectable } from '@angular/core';
-import { arcgisUtils, esriBasemaps, Legend, Search } from 'esri';
+import arcgisUtils = require('esri/arcgis/utils');
+import esriBasemaps = require('esri/basemaps');
+import Legend = require('esri/dijit/Legend');
+import Search = require('esri/dijit/Search');
+import {LegendOptions} from "esri";
+
 
 @Injectable()
 export class MapService {
   _basemaps: any[];
 
-  // load a web map and return response
+  // load a web map and return respons
   createMap(itemIdOrInfo: any, domNodeOrId: any, options: Object) {
     return arcgisUtils.createMap(itemIdOrInfo, domNodeOrId, options).then(response => {
       // append layer infos and basemap name to response before returning
@@ -21,7 +26,7 @@ export class MapService {
   };
 
   // create a legend dijit at the dom node
-  createLegend(options: Object, domNodeOrId: any) {
+  createLegend(options: LegendOptions, domNodeOrId: any) {
     return new Legend(options, domNodeOrId);
   };
 

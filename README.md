@@ -21,7 +21,6 @@ While writing this app, I found the following resources very helpful:
 * [Dependency Injection in Angular 1 and Angular 2](http://victorsavkin.com/post/126514197956/dependency-injection-in-angular-1-and-angular-2)
 
 Built with:
-* [esri-system-js](npmjs.com/esri-system-js)
 * [ArcGIS API for JavaScript]
 * [Angular 2]
 * [TypeScript]
