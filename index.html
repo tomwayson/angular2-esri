@@ -9,44 +9,18 @@
     <link rel="stylesheet" href="//js.arcgis.com/3.16/esri/themes/calcite/dijit/calcite.css">
     <link rel="stylesheet" href="//js.arcgis.com/3.16/esri/themes/calcite/esri/esri.css">
     <link rel="stylesheet" href="app/styles/main.css">
-
-    <!-- 1. Load libraries -->
-    <!-- Polyfill(s) for older browsers -->
-    <script src="node_modules/core-js/client/shim.min.js"></script>
-    <script src="node_modules/zone.js/dist/zone.js"></script>
-    <script src="node_modules/reflect-metadata/Reflect.js"></script>
-    <script src="node_modules/systemjs/dist/system.src.js"></script>
-    <script src="systemjs.config.js"></script>
     
-    <!-- 2. Configure and load Esri libraries -->
+    <!-- 1. Configure and load ESRI libraries -->
     <script>
       window.dojoConfig = {
         async: true
       };
     </script>
     <script src="https://js.arcgis.com/3.16/"></script>
-    <script src="node_modules/esri-system-js/dist/esriSystem.js"></script>
 
-    <!-- 3. Configure SystemJS -->
-    <script src="systemjs.config.js"></script>
+    <!-- Load webpack bundles-->
     <script>
-      // load esri modules needed by this application
-      // into a System.js module called esri
-        esriSystem.register([
-          'esri/arcgis/utils',
-          'esri/basemaps',
-          'esri/dijit/Legend',
-          'esri/dijit/Search'
-        ], function () {
-          // then bootstrap application
-          System.import('app')
-            .catch(function(err){ console.error(err); });
-        }, {
-          moduleNameOverrides: {
-            'esri/arcgis/utils': 'arcgisUtils',
-            'esri/basemaps': 'esriBasemaps'
-          }
-        });
+      require(["/dist/vendor.bundle.js", "/dist/main.bundle.js"], function (vendor, main) {});
     </script>
   </head>
 
@@ -55,5 +29,6 @@
     <div class="container-fluid">
       <my-app>Loading...</my-app>
     </div>
+
   </body>  
 </html>
