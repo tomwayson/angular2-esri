@@ -6,6 +6,7 @@ import { BasemapSelect } from './basemapselect.component';
 import { LayerComponent } from './layer.component';
 import {Tab} from './tab.component';
 import {Tabs} from './tabs.component';
+
 @Component({
   directives: [MapComponent, SearchComponent, LegendComponent, BasemapSelect, LayerComponent, Tab, Tabs],
     selector: 'my-app',
