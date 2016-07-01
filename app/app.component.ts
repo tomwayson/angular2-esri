@@ -4,27 +4,51 @@ import { SearchComponent } from './search.component';
 import { LegendComponent } from './legend.component';
 import { BasemapSelect } from './basemapselect.component';
 import { LayerComponent } from './layer.component';
+import {Tab} from './tab.component';
+import {Tabs} from './tabs.component';
 @Component({
-  directives: [MapComponent, SearchComponent, LegendComponent, BasemapSelect, LayerComponent],
+  directives: [MapComponent, SearchComponent, LegendComponent, BasemapSelect, LayerComponent, Tab, Tabs],
     selector: 'my-app',
     template:
     `
     <div class="row">
-      <div class="col-sm-8 col-md-9 col-lg-10 map-col">
-        <esri-map [itemId]="itemId" [options]="mapOptions" (mapLoaded)="onMapLoad($event)">
-          <esri-search [options]="searchOptions"></esri-search>
-        </esri-map>
-      </div>
-      <div class="col-sm-4 col-md-3 col-lg-2">
-        <h3>{{title}}</h3>
-        <h4>Layer Visibility</h4>
-        <esri-layer></esri-layer>
-        <h4>Legend</h4>
-        <esri-legend class="legend-container"></esri-legend>
-        <h4>Basemap</h4>
-        <div>
-          <basemap-select (basemapSelected)="onBasemapSelected($event)"></basemap-select>
-        </div>
+      <div class="col-sm-12 map-col">
+        <tabs>
+          <h2 style="margin: 0 0 0 10px">{{title}}</h2>
+          <tab [tabTitle]="'Map'">
+              <esri-map [itemId]="itemId" [options]="mapOptions" (mapLoaded)="onMapLoad($event)">
+                  <esri-search [options]="searchOptions"></esri-search>
+              </esri-map>
+          </tab>
+          <tab tabTitle="Layers and Legend">
+            <div class="row">
+                <div class="col-sm-8 col-sm-offset-2">
+                    <div class="row">
+                        <div class="col-xs-4 col-xs-offset-1">
+                            <h4>Layer Visibility</h4>
+                            <esri-layer></esri-layer>
+                        </div>
+                        <div class="col-xs-4 col-xs-offset-1">
+                            <h4>Legend</h4>
+                            <esri-legend></esri-legend>
+                        </div>
+                    </div>
+                </div>
+            </div>
+          </tab>
+          <tab tabTitle="Basemap">
+              <div class="col-sm-8 col-sm-offset-2">
+                  <div class="row">
+                      <div class="col-xs-4 col-xs-offset-4">
+                          <h4>Basemap</h4>
+                          <div>
+                            <basemap-select (basemapSelected)="onBasemapSelected($event)"></basemap-select>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+            </tab>
+        </tabs> 
       </div>
     </div>
     `
