@@ -14,7 +14,7 @@ import {Tabs} from './tabs.component';
     <div class="row">
       <div class="col-sm-12 map-col">
         <tabs>
-          <h2 style="margin: 0 0 0 10px">{{title}}</h2>
+          <h2 style="margin: 0 10px">{{title}}</h2>
           <tab [tabTitle]="'Map'">
               <esri-map [itemId]="itemId" [options]="mapOptions" (mapLoaded)="onMapLoad($event)">
                   <esri-search [options]="searchOptions"></esri-search>
