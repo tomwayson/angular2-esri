@@ -1,6 +1,5 @@
 import { Component, ContentChildren, QueryList, AfterContentInit } from '@angular/core';
 import { Tab } from './tab.component';
-
 @Component({
     selector: 'tabs',
     template:`
