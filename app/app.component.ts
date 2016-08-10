@@ -4,8 +4,11 @@ import { SearchComponent } from './search.component';
 import { LegendComponent } from './legend.component';
 import { BasemapSelect } from './basemapselect.component';
 import { LayerComponent } from './layer.component';
+import { TabComponent } from './tab.component';
+import { TabsComponent } from './tabs.component';
+
 @Component({
-  directives: [MapComponent, SearchComponent, LegendComponent, BasemapSelect, LayerComponent],
+  directives: [MapComponent, SearchComponent, LegendComponent, BasemapSelect, LayerComponent, TabComponent, TabsComponent],
     selector: 'my-app',
     template:
     `
@@ -17,14 +20,18 @@ import { LayerComponent } from './layer.component';
       </div>
       <div class="col-sm-4 col-md-3 col-lg-2">
         <h3>{{title}}</h3>
-        <h4>Layer Visibility</h4>
-        <esri-layer></esri-layer>
-        <h4>Legend</h4>
-        <esri-legend class="legend-container"></esri-legend>
-        <h4>Basemap</h4>
-        <div>
-          <basemap-select (basemapSelected)="onBasemapSelected($event)"></basemap-select>
-        </div>
+        <tabs>
+          <tab tabTitle="Legend">
+            <h4>Legend</h4>
+            <esri-legend></esri-legend>
+          </tab>  
+          <tab tabTitle="Options">
+            <h4>Layer Visibility</h4>
+              <esri-layer></esri-layer>
+            <h4>Basemap</h4>
+            <basemap-select (basemapSelected)="onBasemapSelected($event)"></basemap-select>
+          </tab>
+        </tabs> 
       </div>
     </div>
     `

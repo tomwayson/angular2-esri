@@ -24,3 +24,7 @@ esri-map esri-search .arcgisSearch {
   max-height: 360px;
   overflow-y: auto;
 }
+
+.pane{
+      padding: 1em;
+    }
