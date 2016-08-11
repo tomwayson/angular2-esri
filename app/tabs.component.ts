@@ -6,7 +6,7 @@ import { TabComponent } from './tab.component';
     template:
     `
     <ul class="nav nav-tabs" style="float: right; width:100%; margin-bottom:20px;">
-      <li *ngFor="#tab of tabs" (click)="selectTab(tab)" [class.active]="tab.active">
+      <li *ngFor="let tab of tabs" (click)="selectTab(tab)" [class.active]="tab.active">
         <a href="#">
             {{ tab.title }}
         </a>
