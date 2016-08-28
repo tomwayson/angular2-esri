@@ -14,11 +14,11 @@ module.exports = {
             '@angular/core',
             "@angular/compiler",
             "@angular/core",
+            "@angular/forms",
             "@angular/http",
             "@angular/platform-browser",
             "@angular/platform-browser-dynamic",
             "@angular/router",
-            "@angular/router-deprecated",
             "@angular/upgrade"
         ]
     },

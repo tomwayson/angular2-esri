@@ -1,19 +1,19 @@
 import { Component} from '@angular/core';
 import { MapService } from './map.service';
-import {NgFor,NgModel,NgControl} from '@angular/common';
+import {NgFor,NgModel,NgControl,FORM_DIRECTIVES} from '@angular/common';
 
 @Component({
   selector: 'esri-layer',
-  directives: [NgFor,NgModel],
+  directives: [NgFor,NgModel,FORM_DIRECTIVES],
   template: `
              <form>
-              <div class = "form-group">
+              <div class="form-group">
                     <template ngFor let-legendLayer [ngForOf]="legendLayers">
                       <div>
                           <input
                             type = "checkbox"
                             [(ngModel)]="legendLayer['checked']"
-                            (click)="onClick(legendLayer)"/>
+                            (click)="onClick(legendLayer)" ngDefaultControl/>
                             <label for="legendLayer" >{{legendLayer.name}}</label>
                       </div>
                     </template>
