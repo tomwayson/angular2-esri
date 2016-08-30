@@ -4,11 +4,8 @@ import { SearchComponent } from './search.component';
 import { LegendComponent } from './legend.component';
 import { BasemapSelect } from './basemapselect.component';
 import { LayerComponent } from './layer.component';
-import { TabComponent } from './tab.component';
-import { TabsComponent } from './tabs.component';
 
 @Component({
-  directives: [MapComponent, SearchComponent, LegendComponent, BasemapSelect, LayerComponent, TabComponent, TabsComponent],
     selector: 'my-app',
     template:
     `

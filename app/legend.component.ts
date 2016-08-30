@@ -3,8 +3,7 @@ import { MapService } from './map.service';
 
 @Component({
   selector: 'esri-legend',
-  template: '<div></div>',
-  providers: [MapService]
+  template: '<div></div>'
 })
 export class LegendComponent {
 
