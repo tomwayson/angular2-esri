@@ -4,7 +4,7 @@ import { MapService } from './map.service';
 @Component({
   selector: 'basemap-select',
   template:
-  `<select [ngModel]="selectedBasemap" (change)="onSelectChange($event)" class="form-control">
+  `<select [(ngModel)]="selectedBasemap" (change)="onSelectChange($event)" class="form-control">
   <template ngFor let-basemap [ngForOf]="basemaps">
     <option value="{{basemap.name}}">{{basemap.title}}</option>
   </template>

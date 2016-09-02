@@ -4,7 +4,6 @@ import { MapService } from './map.service';
 @Component({
   selector: 'esri-map',
   template: '<div><ng-content></ng-content></div>',
-  providers: [MapService],
   inputs: ['options', 'itemId']
 })
 export class MapComponent {

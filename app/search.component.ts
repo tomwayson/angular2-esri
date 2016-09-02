@@ -4,7 +4,6 @@ import { MapService } from './map.service';
 @Component({
   selector: 'esri-search',
   template: '<div></div>',
-  providers: [MapService],
   inputs: ['options']
 })
 export class SearchComponent {
