@@ -383,6 +383,7 @@ ___
  [MIT](/LICENSE)
 
 
+# Use arcgis-js-api with Angular class starter (https://github.com/AngularClass/angular2-webpack-starter)
 
 
 1. npm install @types/arcgis-js-api
