@@ -1,7 +1,0 @@
-{
-  "globalDependencies": {
-    "core-js": "registry:dt/core-js#0.0.0+20160524134847",
-    "arcgis-js-api": "github:Esri/jsapi-resources/3.x/typescript/arcgis-js-api.d.ts",
-    "dojo": "registry:dt/dojo#1.9.0+20160521151917"
-  }
-}

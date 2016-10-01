@@ -6,7 +6,7 @@ import { BasemapSelect } from './basemapselect.component';
 import { LayerComponent } from './layer.component';
 
 @Component({
-    selector: 'my-app',
+    selector: 'app',
     template:
     `
     <div class="row">
