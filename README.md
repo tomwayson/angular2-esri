@@ -15,8 +15,10 @@ npm start
 ```
 
 ## Resources
-While writing this app, I found the following resources very helpful:
+* [Example of how to get the ArcGIS API for JavaScript working with webpack and TypeScript](https://github.com/lobsteropteryx/esri-webpack-typescript) by [@lobsteropteryx](https://github.com/lobsteropteryx/)
+* [Fork of the Angular Class webpack starter using use the ArcGIS API for JavaScript](https://github.com/hassanqaiser/angular2_webpack2_esri) by [@hassanqaiser](https://github.com/hassanqaiser)
 
+While writing this app, I found the following resources very helpful, though at this point they may be a bit out of date:
 * [Angular 2 Component Interaction](https://angular.io/docs/ts/latest/cookbook/component-communication.html)
 * [Dependency Injection in Angular 1 and Angular 2](http://victorsavkin.com/post/126514197956/dependency-injection-in-angular-1-and-angular-2)
 
@@ -24,6 +26,7 @@ Built with:
 * [ArcGIS API for JavaScript]
 * [Angular 2]
 * [TypeScript]
+* [webpack](http://webpack.github.io/)
 
 [ArcGIS API for JavaScript]:https://developers.arcgis.com/javascript/
 [Angular 2]:https://angular.io/
