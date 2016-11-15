@@ -50,11 +50,12 @@ module.exports = {
         })
     ],
     externals: [
-        function(context, request, callback) {
+        function (context, request, callback) {
             if (/^dojo/.test(request) ||
                 /^dojox/.test(request) ||
                 /^dijit/.test(request) ||
-                /^esri/.test(request)
+                /^esri/.test(request) ||
+                /^moment/.test(request)
             ) {
                 return callback(null, "amd " + request);
             }
