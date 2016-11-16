@@ -1,6 +1,6 @@
 {
   "name": "angular2-esri-example",
-  "version": "0.2.3",
+  "version": "0.2.4",
   "description": "Example app using the ArcGIS API for JavaScript v3 in an Angular2 app",
   "repository": {
     "type": "git",
