@@ -44,10 +44,10 @@ module.exports = {
         ]
     },
     plugins: [
-        new webpack.optimize.CommonsChunkPlugin({
-            name: 'vendor',
-            minChunks: Infinity
-        })
+        // new webpack.optimize.CommonsChunkPlugin({
+        //     name: 'vendor',
+        //     minChunks: Infinity
+        // })
     ],
     externals: [
         function (context, request, callback) {
@@ -55,7 +55,7 @@ module.exports = {
                 /^dojox/.test(request) ||
                 /^dijit/.test(request) ||
                 /^esri/.test(request) ||
-                /^moment/.test(request)
+                /^moment/.test(request) 
             ) {
                 return callback(null, "amd " + request);
             }

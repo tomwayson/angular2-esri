@@ -32,11 +32,8 @@ node_modules
 # Optional REPL history
 .node_repl_history
 
-# typescript output
-*.js
-*.js.map
-
-!webpack.config.js
+# webpack build
+dist
 
 # types
 typings
