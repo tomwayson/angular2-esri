@@ -20,6 +20,7 @@ The patterns for communicating between components, services, and ArcGIS maps and
 ## Resources
 * [Using the ArcGIS API for JavaScript in Applications built with webpack](http://tomwayson.com/2016/11/27/using-the-arcgis-api-for-javascript-in-applications-built-with-webpack/)
 * [Example of how to get the ArcGIS API for JavaScript working with webpack and TypeScript](https://github.com/lobsteropteryx/esri-webpack-typescript) by [@lobsteropteryx](https://github.com/lobsteropteryx/)
+* [Angular 2 introduction to webpack](https://angular.io/docs/ts/latest/guide/webpack.html)
 * [Example of how to use the ArcGIS API for JavaScript in an angular-cli application](https://github.com/tomwayson/esri-angular-cli-example)
 * [Fork of the Angular Class webpack starter using use the ArcGIS API for JavaScript](https://github.com/hassanqaiser/angular2_webpack2_esri) by [@hassanqaiser](https://github.com/hassanqaiser)
 
