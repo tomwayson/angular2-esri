@@ -7,15 +7,17 @@ with a map, legend, search, etc.
 
 [Try it out!](http://tomwayson.github.io/angular2-esri-example/)
 
+## Status
+The repository is built on an outdated version of Angular, and I'm not sure if the patterns it demonstrates for communicating between components, services, and ArcGIS maps and data are in line w/ current best practices. I'm no longer actively maintaining this repository (i.e. not adding new features, nor keeping it up to date with new releases of Angular nor the ArcGIS API for JavaScript).
+
+For a more up to date way to use the ArcGIS API for JavaScript in an Angular application, I recommend using https://github.com/Esri/esri-loader/. 
+
 ## Quick Start
 After downloading, run the following at the command line to run the app:
 ```bash
 npm install
 npm start
 ```
-
-## Status
-The patterns for communicating between components, services, and ArcGIS maps and data have been established. I'm no longer actively maintaining this repository (i.e. not adding new features, nor keeping it up to date with new releases of Angular 2 nor the ArcGIS API for JavaScript). Pull requests to demonstrate more up to date patterns, or update versions of dependencies will be gladly accepted.
 
 ## Resources
 * [Using the ArcGIS API for JavaScript in Applications built with webpack](http://tomwayson.com/2016/11/27/using-the-arcgis-api-for-javascript-in-applications-built-with-webpack/)
